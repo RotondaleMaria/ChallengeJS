@@ -1,0 +1,71 @@
+<p>Nueva operacion</p>
+
+<body>
+<form [formGroup]="formOperacion"(ngSubmit)="GuardarFormulario()" class="form-horizontal col-sm">
+    <fieldset>
+
+        <div class="form-group">
+            <label for="concepto" class="col-sm-2 control-label">Concepto</label>
+            <div class="col-md-8">
+                <input class="form-control"
+                id="concepto"
+                type="text"
+                formControlName="concepto"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="monto" class="col-sm-2 control-label">Monto</label>
+            <div class="col-md-8">
+                <input class="form-control"
+                id="monto"
+                type="text"
+                formControlName="monto"
+            />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="fecha" class="col-sm-2 control-label">Fecha</label>
+            <div class="col-md-8">
+                <input class="form-control"
+                id="fecha"
+                type="text"
+                formControlName="fecha"
+            />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="tipo" class="col-sm-2 control-label">Tipo</label>
+            <div class="col-md-8">
+                <input class="form-control"
+                id="tipo"
+                type="text"
+                formControlName="tipo"
+            />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="categoria" class="col-sm-2 control-label">Categoria</label>
+            <div class="col-md-8">
+                <input class="form-control"
+                id="categoria"
+                type="text"
+                formControlName="categoria"
+            />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-8">
+            <button type="submit" class="btn btn-primary form-control" [disabled]="!formOperacion.valid">Guardar</button>
+        </div>
+        </div>
+
+    </fieldset>
+</form>
+<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorinin="anonymois"></script>
+</body> 
+
