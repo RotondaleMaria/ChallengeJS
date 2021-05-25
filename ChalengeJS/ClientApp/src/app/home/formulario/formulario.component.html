@@ -1,6 +1,10 @@
-<p>Nueva operacion</p>
 
-<body>
+<h1>{{titulo}}</h1>
+
+<body class="row"> 
+    <div class="col-sm costadito" >
+
+    </div>
 <form [formGroup]="formOperacion"(ngSubmit)="GuardarFormulario()" class="form-horizontal col-sm">
     <fieldset>
 
@@ -26,35 +30,34 @@
         </div>
 
         <div class="form-group">
-            <label for="fecha" class="col-sm-2 control-label">Fecha</label>
+            <label for="start" class="col-sm-2 control-label">Fecha</label>
             <div class="col-md-8">
                 <input class="form-control"
-                id="fecha"
-                type="text"
-                formControlName="fecha"
-            />
+                id="start"
+                type="date"
+                value="date"
+                name="trip-start"
+                min="2021-01-01" max="2021-12-31">
             </div>
         </div>
 
         <div class="form-group">
             <label for="tipo" class="col-sm-2 control-label">Tipo</label>
             <div class="col-md-8">
-                <input class="form-control"
-                id="tipo"
-                type="text"
-                formControlName="tipo"
-            />
+                <select formControlName="tipo" class="form-control">
+                    <option value="">---Seleccionar el tipo---</option>
+                    <option *ngFor="let tipo of tipos" [value]="tipo.descripcion">{{ tipo.descripcion }}</option>
+                </select> 
             </div>
         </div>
 
         <div class="form-group">
             <label for="categoria" class="col-sm-2 control-label">Categoria</label>
             <div class="col-md-8">
-                <input class="form-control"
-                id="categoria"
-                type="text"
-                formControlName="categoria"
-            />
+                <select formControlName="categoria" class="form-control">
+                    <option value="">---Seleccionar la categoria---</option>
+                    <option *ngFor="let categoria of categorias" [value]="categoria.descripcion">{{ categoria.descripcion }}</option>
+                </select> 
             </div>
         </div>
 
@@ -66,6 +69,5 @@
 
     </fieldset>
 </form>
-<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorinin="anonymois"></script>
 </body> 
 

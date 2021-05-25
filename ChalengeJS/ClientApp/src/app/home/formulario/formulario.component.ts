@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {ActivatedRoute,Router} from '@angular/router';
 import {HomeService} from '../../servicios/home.service';
-import {Home, concepto} from '../../modelos/home';
+import {Home, tipo, categoria} from '../../modelos/home';
+
 
 
 
@@ -16,8 +17,10 @@ export class FormularioComponent implements OnInit {
 
   formOperacion:FormGroup;
   operacionId:number;
-  conceptos:concepto[];
+  tipos:tipo[];
   titulo:string;
+  categorias:categoria[];
+
 
 
   constructor(private fb:FormBuilder,
@@ -26,23 +29,39 @@ export class FormularioComponent implements OnInit {
               private router:Router,) { }
 
   ngOnInit() {
+
     this.formOperacion= this.fb.group({
+      fecha:'',
       concepto:'',
       monto:'',
-      fecha:'',
       tipo:'',
       categoria:'',
   
     });
 
-    this.conceptos=[
-      {id:1, descripcion: "ingreso"},
-      {id:2, descripcion: "egreso"}
+
+
+
+    this.tipos=[
+      {id:1, descripcion: "Ingreso"},
+      {id:2, descripcion: "Egreso"}
     ];
+
+    this.categorias=[
+      {id:1, descripcion:"Inversion"},
+      {id:2, descripcion:"Haberes"},
+      {id:3, descripcion:"Gastos"},
+      {id:4, descripcion:"Comida"},
+      {id:5, descripcion:"Auto"},
+      {id:6, descripcion:"Impuestos"},
+      {id:7, descripcion:"Otros"},
+      {id:8, descripcion:"Salud"}
+    ];
+
     this.activatedRoute.params.subscribe(
       params => {
         this.operacionId= params['id'];
-        console.log("Libreria Id: " + this.operacionId);
+        console.log("Operacion Id: " + this.operacionId);
         if(isNaN(this.operacionId)){
           //no es numerico
           this.titulo="Ingresar nueva operacion";
@@ -51,12 +70,12 @@ export class FormularioComponent implements OnInit {
         else{
           //es numerico
           var home = this.HomeSrv.Buscar(this.operacionId);
-          this.titulo="Modificar los datos de la operacion: " + home.concepto + "" + home.fecha;
+          this.titulo="Modificar los datos de la operacion:" + " " +home.concepto + " " + home.fecha;
           //llenar el campo formulario
           this.formOperacion.patchValue({
+            fecha:home.fecha,
             concepto:home.concepto,
             monto:home.monto,
-            fecha:home.fecha,
             tipo:home.tipo,
             categoria:home.categoria,
           });
@@ -82,5 +101,6 @@ export class FormularioComponent implements OnInit {
       }
       this.router.navigate(["/home"])
     }
+
 
 }
