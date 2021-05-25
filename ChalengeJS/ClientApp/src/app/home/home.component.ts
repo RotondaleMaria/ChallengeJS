@@ -11,35 +11,36 @@ export class HomeComponent implements OnInit{
 
   public FormularioDeOperacion:Home[];
   public campobuscado:string;
+  totalEgreso:number;
+  totalIngreso:number;
+  diferencia:number;
 
 
-  constructor(private servicioHome: HomeService){}
+
+  constructor(private servicioHome: HomeService){
+
+  }
 
   ngOnInit(){
 
     this.FormularioDeOperacion=this.servicioHome.MostrarTodos(); 
-
+    this.totalEgreso = this.servicioHome.TotalEgresos();
+    this.totalIngreso = this.servicioHome.TotalIngresos();
+    this.diferencia= this.servicioHome.Diferencia()
   }
+
 
   Borrar(operacionId:number) {
     
     this.servicioHome.BorrarOperecion(operacionId);
     this.FormularioDeOperacion= this.servicioHome.MostrarTodos();
-  }
-
-  verificarEstado(operacionId:number) {
-    var libreria:Home;
-    libreria = this.servicioHome.Buscar(operacionId);
-    if(libreria.tipo){
-      alert("Ingreso");
-    }
-    else{
-      alert("Egreso")
-    }
+    this.totalEgreso = this.servicioHome.TotalEgresos();
+    this.totalIngreso = this.servicioHome.TotalIngresos();
+    this.diferencia = this.servicioHome.Diferencia()
   }
 
     BuscarOperacion(){
-      this.FormularioDeOperacion=this.servicioHome.BuscarPorConcepto(this.campobuscado);
+      this.FormularioDeOperacion=this.servicioHome.BuscarPorCategoria(this.campobuscado);
       console.log(this.FormularioDeOperacion);
     }
 

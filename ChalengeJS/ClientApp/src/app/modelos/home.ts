@@ -7,7 +7,16 @@ export interface Home {
     categoria:string,
 }
 
-export interface concepto{
+export interface tipo{
     id:number;
     descripcion: string;
 }
+
+export interface categoria{
+    id:number;
+    descripcion: string;
+}
+
+
+
+

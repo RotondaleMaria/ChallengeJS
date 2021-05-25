@@ -5,17 +5,27 @@
 <div class="form-group">
   <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" [(ngModel)]="campobuscado"name="campobuscado" type="search" placeholder="Buscar operacion" aria-label="Buscar">
-      <button (click)="BuscarOperacion()" class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+      <button (click)="BuscarOperacion()" class="btn btn-outline-success my-2 my-sm-0" type="submit">BUSCAR</button>
   </form>
 </div>
 
+<table class="table table-bordered">
+
+  <thead>
+    <th>TOTAL DE INGRESO: ${{totalIngreso}} </th>
+    <th>TOTAL DE EGRESO: ${{totalEgreso}}</th>
+    <th>DIFERENCIA: ${{diferencia}}</th>
+  </thead>
+</table>
+
+
 <table class="table table-bordered" *ngIf="FormularioDeOperacion.length>0">
-  <thead class="table table-striped table-dark">
+  <thead  class="col-sm-2 control-label">
     <tr>
       <th scope="col">Id</th>
+      <th scope="col">Fecha</th>
       <th scope="col">Concepto</th>
       <th scope="col">Monto</th>
-      <th scope="col">Fecha</th>
       <th scope="col">Tipo</th>
       <th scope="col">Categoria</th>
       <th></th>
@@ -23,26 +33,26 @@
     </tr>
   </thead>
 
-  <tbody class="table-danger">
+  <tbody  class="col-sm-2 control-label">
     <tr *ngFor="let home of FormularioDeOperacion">
       <td scope="row">{{home.id}}</td>
+      <td scope="row">{{home.fecha |date: 'dd/MM/yyyy'}}</td>
       <td scope="row">{{home.concepto}}</td>
-      <td scope="row">{{home.monto}}</td>
-      <td scope="row">{{home.fecha | date:'shortDate'}}</td>
+      <td scope="row">{{home.monto  | currency: 'USD' }}</td>
       <td scope="row">{{home.tipo | uppercase }}</td>
       <td scope="row">{{home.categoria}}</td>
       <td>
-        <button class="btn btn-danger"(click)="Borrar(home.id)">Borrar</button>
+        <button class="btn btn-danger"(click)="Borrar(home.id)">BORRAR</button>
     </td>
     <td>
-      <button class="btn btn-success"[routerLink]='["/home-editar/" + home.id]'>Editar</button>
+      <button class="btn btn-success"[routerLink]='["/home-editar/" + home.id]'>EDITAR</button>
   </td>
     </tr>
   </tbody> 
 </table>
 
 <div class="form-group" >
-  <button [routerLink]='["/home-nuevo"]' type="submit" class="btn btn-primary form-control" >Crear operacion</button>
+  <button [routerLink]='["/home-nuevo"]' type="submit" class="btn btn-primary form-control" >CREAR OPERACION</button>
   
 </div>
 

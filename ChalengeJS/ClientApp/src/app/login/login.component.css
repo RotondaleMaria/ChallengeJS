@@ -1,0 +1,48 @@
+form {
+  border: 50px;
+  width: 600px;
+}
+
+.img{
+  background-image: url('../../assets/adomas-aleno-4vrZpOo7fTc-unsplash.jpg'); 
+  background-size:cover; 
+  padding: 200px;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+
+button {
+  color: black;
+  padding: 14px 20px;
+  margin: 4px 0;
+  width: 100%;
+  background-color: rgb(54, 177, 199);
+}
+
+
+
+.cancelbtn{
+  color: black;
+  padding: 14px 20px;
+  margin: 4px 0;
+  width: 50%;
+  background-color: rgb(211, 152, 110);
+}
+
+.regisbtn{
+  color: black;
+  padding: 14px 20px;
+  margin: 4px 0;
+  width: 50%;
+  background-color: rgb(211, 152, 110);
+}
+
+

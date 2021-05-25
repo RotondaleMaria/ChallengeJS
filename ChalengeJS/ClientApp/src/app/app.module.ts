@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { FormularioComponent } from './home/formulario/formulario.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormularioComponent } from './home/formulario/formulario.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    FormularioComponent
+    FormularioComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -31,6 +33,7 @@ import { FormularioComponent } from './home/formulario/formulario.component';
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'home-nuevo', component:FormularioComponent},
       { path: 'home-editar/:id', component:FormularioComponent},
+      { path: 'login', component:LoginComponent},
     ])
   ],
   providers: [],
