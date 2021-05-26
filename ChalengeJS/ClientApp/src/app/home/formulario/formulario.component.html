@@ -23,7 +23,7 @@
             <div class="col-md-8">
                 <input class="form-control"
                 id="monto"
-                type="text"
+                type="number"
                 formControlName="monto"
             />
             </div>
@@ -36,8 +36,10 @@
                 id="start"
                 type="date"
                 value="date"
+                formControlName="fecha"
                 name="trip-start"
-                min="2021-01-01" max="2021-12-31">
+                min="2021-01-01" max="2021-12-31" required>
+                <span class="validity"></span>
             </div>
         </div>
 
