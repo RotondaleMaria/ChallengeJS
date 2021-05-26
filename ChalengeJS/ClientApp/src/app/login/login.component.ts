@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
 
   logInUser(){
     if(this.username=="admin@gmail.com" && this.password == "Admin#123"){ 
+      
       console.log("Bienvenido, usuario autorizado")
     }
     else{

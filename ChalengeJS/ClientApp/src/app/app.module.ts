@@ -11,6 +11,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { FormularioComponent } from './home/formulario/formulario.component';
 import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LoginComponent } from './login/login.component';
     CounterComponent,
     FetchDataComponent,
     FormularioComponent,
-    LoginComponent
+    LoginComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -34,6 +36,7 @@ import { LoginComponent } from './login/login.component';
       { path: 'home-nuevo', component:FormularioComponent},
       { path: 'home-editar/:id', component:FormularioComponent},
       { path: 'login', component:LoginComponent},
+      { path: 'registro', component:RegistroComponent},
     ])
   ],
   providers: [],

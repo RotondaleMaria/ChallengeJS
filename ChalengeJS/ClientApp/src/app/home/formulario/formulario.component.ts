@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import {ActivatedRoute,Router} from '@angular/router';
 import {HomeService} from '../../servicios/home.service';
 import {Home, tipo, categoria} from '../../modelos/home';
+import { FetchDataComponent } from 'src/app/fetch-data/fetch-data.component';
 
 
 
