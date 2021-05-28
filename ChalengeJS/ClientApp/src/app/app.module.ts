@@ -11,7 +11,8 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { FormularioComponent } from './home/formulario/formulario.component';
 import { LoginComponent } from './login/login.component';
-import { RegistroComponent } from './registro/registro.component'
+import { RegistroComponent } from './registro/registro.component';
+import { AppRoutingModule } from './app-routing.module'
 
 @NgModule({
   declarations: [
@@ -30,14 +31,15 @@ import { RegistroComponent } from './registro/registro.component'
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'home', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'home-nuevo', component:FormularioComponent},
       { path: 'home-editar/:id', component:FormularioComponent},
-      { path: 'login', component:LoginComponent},
+      { path: '', component:LoginComponent},
       { path: 'registro', component:RegistroComponent},
-    ])
+    ]),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
