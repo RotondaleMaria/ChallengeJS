@@ -35,7 +35,7 @@
   </thead>
 
   <tbody  class="col-sm-2 control-label">
-    <tr *ngFor="let home of FormularioDeOperacion">
+    <tr *ngFor="let home of FormularioDeOperacion | paginate:{itemsPerPage: 10 , currentPage:pageActual}">
       <td scope="row">{{home.id}}</td>
       <td scope="row">{{home.fecha |date: 'dd/MM/yyyy'}}</td>
       <td scope="row">{{home.concepto}}</td>
@@ -51,6 +51,8 @@
     </tr>
   </tbody> 
 </table>
+
+<pagination-controls (pageChange)="pageActual=$event"></pagination-controls>
 
 <div class="form-group" >
   <button [routerLink]='["/home-nuevo"]' type="submit" class="btn btn-primary form-control" >CREAR OPERACION</button>

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,24 +11,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  username:string;
-  password:string;
+  loginForm = new FormGroup({
 
-  constructor() { }
+    username: new FormControl(''),
+    password: new FormControl('')
+  })
+  
+  
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  logInUser(){
-    if(this.username=="admin@gmail.com" && this.password == "Admin#123"){ 
+  onSubmit(): void {
+    
+      if(this.loginForm.value.username=="admin@gmail.com" && this.loginForm.value.password == "Admin#123"){ 
       
-      console.log("Bienvenido, usuario autorizado")
+        this.router.navigate(['/home']);
     }
     else{
-      console.log("Usuario rechazado");
+      alert("Usuario rechazado");
 
     }
-    
   }
 
 }
+

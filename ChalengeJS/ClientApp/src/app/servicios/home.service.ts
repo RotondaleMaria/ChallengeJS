@@ -24,6 +24,12 @@ export class HomeService {
     {id:12, fecha: "05/21/2021",concepto:"Swiss medical" , monto:1165, tipo:"Egreso", categoria: "Salud"},
     {id:13, fecha: "05/21/2021",concepto:"Combustible" , monto:4175, tipo:"Egreso", categoria: "Auto"},
     {id:14, fecha: "05/22/2021",concepto:"Municipal" , monto:3260, tipo:"Egreso", categoria: "Impuestos"},
+    {id:15, fecha:"02/05/2021" , concepto: "Supermercado", monto: 1000, tipo:"Egreso", categoria:"Egreso"},
+    {id:16, fecha: "04/22/2021", concepto:"Cuenta plazo fijo" , monto:500, tipo:"Ingreso", categoria: "Inversion"},
+    {id:17, fecha: "04/22/2021", concepto:"Supermercado" , monto:2700, tipo:"Egreso", categoria: "Comida"},
+    {id:18, fecha: "04/12/2021", concepto:"Cuenta sueldo" , monto:2500, tipo:"Ingreso", categoria: "Haberes"},
+    {id:19, fecha: "04/14/2021", concepto:"Supermercado" , monto:500, tipo:"Egreso", categoria: "Comida"}, 
+    {id:20, fecha: "04/16/2021", concepto:"Cuenta plazo fijo" , monto:300, tipo:"Ingreso", categoria: "Inversion"},
   ];
 
   CrearId(){

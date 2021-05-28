@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit{
   totalEgreso:number;
   totalIngreso:number;
   diferencia:number;
+  pageActual: number =1;
 
 
 

@@ -12,7 +12,9 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { FormularioComponent } from './home/formulario/formulario.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
-import { AppRoutingModule } from './app-routing.module'
+import { AppRoutingModule } from './app-routing.module';
+import  { NgxPaginationModule }  from  'ngx-pagination' ;
+
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { AppRoutingModule } from './app-routing.module'
     FetchDataComponent,
     FormularioComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    NgxPaginationModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent, pathMatch: 'full' },
